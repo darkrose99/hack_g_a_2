@@ -1,6 +1,11 @@
-
 name: Eventos
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   detectar-evento:
@@ -9,7 +14,7 @@ jobs:
       - name: Mostrar tipo de evento
         run: | 
           echo "El autor es: ${{ github.actor }}"
-      
+
       - name: Mostrar tipo de evento
         run: | 
           echo "El evento que me activo fue: ${{ github.event_name }}"
